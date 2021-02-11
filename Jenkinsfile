@@ -30,7 +30,7 @@ pipeline
         {
             steps
             {
-                 sh 'cp target/DevOpsRocks.war root@3.135.193.143:/opt/tomcat/webapps/DevOpsRocks.war'
+                 sh 'cp target/DevOpsRocks.war /opt/tomcat/webapps/DevOpsRocks.war'
             }
         }	
 		

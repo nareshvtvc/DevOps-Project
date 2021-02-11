@@ -30,8 +30,7 @@ pipeline
         {
             steps
             {
-                echo pwd()
-                sh 'scp -o StrictHostKeyChecking=no target/DevOpsRocks.war root@3.135.193.143:/root/tomcat/webapps/DevOpsRocks.war'
+                 sh 'cp target/DevOpsRocks.war /opt/tomcat/webapps/DevOpsRocks.war'
             }
         }	
 		

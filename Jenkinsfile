@@ -1,4 +1,3 @@
-#naresh
 pipeline
 {
     agent any

@@ -20,14 +20,6 @@ pipeline
             }
         }
 		
-		stage ('Junit Test Reports')
-        {
-            steps
-            {
-                junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
-            }
-        }
 		
-
     }
 }

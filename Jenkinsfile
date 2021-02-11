@@ -1,6 +1,3 @@
-#!groovy
-properties([parameters([listGitBranches(branchFilter: '.*', credentialsId: '', defaultValue: '', name: 'FROM_Branch', quickFilterEnabled: false, remoteURL: 'https://github.com/snteja/DevOps-Project.git', selectedValue: 'NONE', sortMode: 'NONE', tagFilter: '*', type: 'PT_BRANCH')])])
-
 pipeline
 {
     agent any
@@ -10,7 +7,7 @@ pipeline
         {
             steps
             {
-                git 'https://github.com/snteja/DevOps-Project.git'
+                git 'https://github.com/nareshvtvc/DevOps-Project.git'
             }
         }
         
@@ -21,5 +18,15 @@ pipeline
                 sh label: '', script: 'mvn package'
             }
         }
+		
+		stage ('Junit Test Reports')
+        {
+            steps
+            {
+                junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
+            }
+        }
+		
+
     }
 }
